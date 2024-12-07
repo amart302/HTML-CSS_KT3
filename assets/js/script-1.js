@@ -97,7 +97,7 @@ document.querySelectorAll('a[href^="#"]').forEach(block => {
     
     if(window.innerWidth < 950){
       setTimeout(() => {
-        header.style.top = "-110px";
+        header.style.top = "-160px";
       }, 800);
       
       burgerMenu();
