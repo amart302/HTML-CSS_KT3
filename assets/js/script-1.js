@@ -120,3 +120,28 @@ window.onscroll = function() {
 
     prevScrollPos = currentScrollPos;
 }
+
+const services = document.querySelectorAll(".service");
+const moreDetailsBtns = document.querySelectorAll(".moreDetailsBtn");
+const servicePodBlock1 = document.querySelectorAll(".service_podBlock1");
+const servicePodBlock2 = document.querySelectorAll(".service_podBlock2");
+const moreDetailsClose = document.querySelectorAll(".moreDetailsClose");
+for(let i = 0; i < moreDetailsBtns.length; i++){
+  moreDetailsBtns[i].addEventListener("click", () => {
+      services[i].style.transform = "rotateY(180deg)";
+      setTimeout(() => {
+        servicePodBlock1[i].style.display = "none";
+        servicePodBlock2[i].style.display = "flex";
+      }, 100)
+  })
+}
+
+for(let i = 0; i < moreDetailsClose.length; i++){
+  moreDetailsClose[i].addEventListener("click", () => {
+    services[i].style.transform = "rotateY(0deg)";
+    setTimeout(() => {
+      servicePodBlock1[i].style.display = "flex";
+      servicePodBlock2[i].style.display = "none";
+    }, 100)
+  })
+}
